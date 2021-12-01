@@ -5,8 +5,7 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HeroesHomeComponent } from './pages/heroes-home/heroes-home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
-
-
+import { HeroesRoutingModule } from './heroes-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,10 +13,8 @@ import { ListadoComponent } from './pages/listado/listado.component';
     BuscarComponent,
     HeroeComponent,
     HeroesHomeComponent,
-    ListadoComponent
+    ListadoComponent,
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule, HeroesRoutingModule],
 })
-export class HeroesModule { }
+export class HeroesModule {}
