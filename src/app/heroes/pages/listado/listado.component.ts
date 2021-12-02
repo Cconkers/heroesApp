@@ -11,6 +11,7 @@ export class ListadoComponent implements OnInit {
 
 @Input() heroes:Heroe[] = [];
 
+
   constructor(private HeroesService: HeroesService) {}
 
   ngOnInit(): void {

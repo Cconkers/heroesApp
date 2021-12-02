@@ -18,7 +18,11 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="warn">Leer mas..</button>
-          <button mat-raised-button color="info">Editar</button>
+          <button mat-raised-button color="warn"
+          [routerLink]="['/heroes', heroe.id]"
+          >Leer mas..</button>
+          <button mat-raised-button color="info"
+          [routerLink]="['/heroes/editar', heroe.id]"
+          >Editar</button>
         </mat-card-actions>
       </mat-card>
