@@ -11,7 +11,7 @@ import { HeroesService } from '../../services/heroes.service';
 export class BuscarComponent implements OnInit {
   heroes: Heroe[] = [];
   termino: string = '';
-  heroeSeleccionado!: Heroe[];
+  heroeSeleccionado!: Heroe[] | undefined;
 
   constructor(private HeroesService: HeroesService) {}
 
@@ -24,6 +24,10 @@ export class BuscarComponent implements OnInit {
   }
 
   opcionSeleccionada(event: MatAutocompleteSelectedEvent) {
+    if (!event.option.value) {
+      this.heroeSeleccionado = undefined;
+      return;
+    }
     const heroe: Heroe = event.option.value;
     this.termino = heroe.superhero;
 
