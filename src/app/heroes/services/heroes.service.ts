@@ -16,13 +16,24 @@ export class HeroesService {
     return this.http.get<Heroe[]>(`${this.baseUrl}/heroes/`);
   }
 
-  getHeroePorId(id: string): Observable<Heroe[]> {
-    return this.http.get<Heroe[]>(`${this.baseUrl}/heroes/${id}`);
+  getHeroePorId(id: string): Observable<Heroe> {
+    return this.http.get<Heroe>(`${this.baseUrl}/heroes/${id}`);
   }
 
-  getSugerenias(termino: string): Observable<Heroe[]> {
+  getSugerencias(termino: string): Observable<Heroe[]> {
     return this.http.get<Heroe[]>(
       `${this.baseUrl}/heroes?q=${termino}&_limit=6`
     );
+  }
+  agregarHeroe(heroe: Heroe): Observable<Heroe> {
+    return this.http.post<Heroe>(`${this.baseUrl}/heroes/${heroe.id}`, heroe);
+  }
+
+  actualizarHeroe(Heroe: Heroe): Observable<Heroe> {
+    return this.http.put<Heroe>(`${this.baseUrl}/heroes/${Heroe.id}`, Heroe);
+  }
+
+  borrarHeroe(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/heroes/${id}`);
   }
 }

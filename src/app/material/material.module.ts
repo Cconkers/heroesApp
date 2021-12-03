@@ -12,6 +12,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   exports: [
@@ -26,7 +27,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSelectModule
   ],
 })
 export class MaterialModule {}

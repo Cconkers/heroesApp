@@ -9,18 +9,18 @@ import { HeroesService } from '../../services/heroes.service';
   styleUrls: ['./buscar.component.css'],
 })
 export class BuscarComponent implements OnInit {
-  heroes: Heroe[] = [];
   termino: string = '';
-  heroeSeleccionado!: Heroe[] | undefined;
+  heroes: Heroe[] = [];
+  heroeSeleccionado: Heroe | undefined;
 
-  constructor(private HeroesService: HeroesService) {}
+  constructor(private heroesService: HeroesService) {}
 
   ngOnInit(): void {}
 
   buscando() {
-    this.HeroesService.getSugerenias(this.termino).subscribe(
-      (heroes) => (this.heroes = heroes)
-    );
+    this.heroesService
+      .getSugerencias(this.termino.trim())
+      .subscribe(heroes => this.heroes = heroes);
   }
 
   opcionSeleccionada(event: MatAutocompleteSelectedEvent) {
@@ -28,10 +28,14 @@ export class BuscarComponent implements OnInit {
       this.heroeSeleccionado = undefined;
       return;
     }
+
     const heroe: Heroe = event.option.value;
     this.termino = heroe.superhero;
 
-    this.HeroesService.getHeroePorId(heroe.id!)
-    .subscribe(heroe => this.heroeSeleccionado = heroe);
+    this.heroesService
+      .getHeroePorId(heroe.id!)
+      .subscribe(
+        heroe => this.heroeSeleccionado = heroe
+      );
   }
 }
