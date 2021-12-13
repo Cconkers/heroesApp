@@ -13,6 +13,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 import { imagenPipe } from './pipes/imagen.pipe';
 import { FormsModule } from '@angular/forms';
+import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     ListadoComponent,
     HeroeTarjetaComponent,
     imagenPipe,
+    ConfirmarComponent,
   ],
   imports: [
     CommonModule,

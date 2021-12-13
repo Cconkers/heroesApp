@@ -1,0 +1,26 @@
+::ng-deep snack-bar-container.mySnackBar {
+  max-width: 100%;
+  width: 100vw;
+  background: rgb(0, 11, 108);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 11, 108, 0.8631827731092436) 5%,
+    rgba(255, 0, 0, 0.8239670868347339) 15%,
+    rgba(255, 0, 0, 0.8239670868347339) 30%,
+    rgba(255, 255, 255, 0.8127626050420168) 40%,
+    rgba(255, 255, 255, 0.8099614845938375) 50%,
+    rgba(255, 255, 255, 0.7903536414565826) 60%,
+    rgba(255, 0, 0, 0.742734593837535) 70%,
+    rgba(255, 0, 0, 0.7595413165266106) 85%,
+    rgba(0, 11, 108, 0.7343312324929971) 95%
+  );
+  font-family: "Bangers", cursive!important;
+  font-size: 4em;
+  color: rgb(255, 255, 255);
+  border: 2px solid white;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
